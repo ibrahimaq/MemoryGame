@@ -90,9 +90,9 @@ function gameFunction() {
     
     // now we pass the matched pair into an array and remove eventListener
     matched();
-    
     lockboard();
     reset();
+    setTimeout(lockBoard, 1600); //unlocking the board
   } else if (
     compareSrcArr.length === 2 &&
     compareSrcArr[0].getAttribute("src") !==
@@ -101,7 +101,7 @@ function gameFunction() {
     lockBoard(); //locking the board so no clicks
 
     setTimeout(hide, 750); // function has to be declared inside Timeout function or it will execute instantaneously
-    setTimeout(lockBoard, 750); //unblocking the board
+    setTimeout(lockBoard, 1600); //unlocking the board
   }
 }
 
@@ -137,6 +137,7 @@ function matched() {
   matchedPair.push(...compareSrcArr);
 
   if (matchedPair.length ===6){
+    lockboardd();
     popUp.children[0].textContent = "You got them all!";
     popUp.style.visibility = "visible";
     popUp.style.animation = "gameOver 1.5s";
