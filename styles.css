@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center; */
+}
+
+.tile {
+  background: aquamarine;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+img {
+  visibility: hidden;
+}
+
+.matchedPopUp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  padding: 10px;
+  background: white;
+  
+  text-align: center;
+  border-radius: 10px;
+  visibility: hidden;
+  
+  /* animation: popUpAnimation 1.5s; */
+}
+
+button {
+  border: none;
+  background-color: lightcoral;
+  padding: 10px;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+  display: none;
+}
+
+@keyframes popUpAnimation {
+    
+  0% {
+    
+    transform: scale(0);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    
+  }
+  30%{
+      transform: scale(1);
+      opacity: 0.8;
+      transform: translate(-50%, -50%);
+      
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes gameOver {
+    
+    0% {
+      
+      transform: scale(0);
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+/* media queries */
+@media only screen and (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .tile {
+    margin: 3px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+  }
+
+  img {
+    width: 90%;
+    height: auto;
+  }
+
+  .matchedPopUp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 10px;
+    background: white;
+    
+    text-align: center;
+    border-radius: 10px;
+    visibility: hidden;
+    
+    /* animation: popUpAnimation 1.5s; */
+  }
+  
+  button {
+    border: none;
+    background-color: lightcoral;
+    padding: 10px;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    display: none;
+  }
+  
+}
