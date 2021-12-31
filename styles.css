@@ -26,6 +26,7 @@ header {
   margin: 1rem;
   padding: 1rem;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 img {
@@ -44,7 +45,6 @@ img {
   font-size: 2rem;
   padding: 10px;
   background: white;
-  
   text-align: center;
   border-radius: 10px;
   visibility: hidden;
@@ -59,6 +59,7 @@ button {
   margin: 1.5rem 0;
   border-radius: 10px;
   display: none;
+  cursor: pointer;
 }
 
 @keyframes popUpAnimation {
