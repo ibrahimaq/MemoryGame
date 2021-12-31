@@ -91,7 +91,7 @@ function gameFunction() {
     // now we pass the matched pair into an array and remove eventListener
     matched();
     
-
+    lockboard();
     reset();
   } else if (
     compareSrcArr.length === 2 &&
