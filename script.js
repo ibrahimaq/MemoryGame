@@ -87,7 +87,7 @@ function gameFunction() {
     // this.removeEventListener("click",gameFunction);
     compareSrcArr[0].removeEventListener("click", gameFunction);
     compareSrcArr[1].removeEventListener("click", gameFunction);
-    
+
     // now we pass the matched pair into an array and remove eventListener
     matched();
     lockBoard();
@@ -101,16 +101,16 @@ function gameFunction() {
     lockBoard(); //locking the board so no clicks
 
     setTimeout(hide, 750); // function has to be declared inside Timeout function or it will execute instantaneously
-    setTimeout(lockBoard, 1600); //unlocking the board
+    setTimeout(lockBoard, 750); //unlocking the board
   }
 }
 
 tile.forEach((tile) => tile.addEventListener("click", gameFunction));
-playAgainBtn.addEventListener("click", ()=>{
+playAgainBtn.addEventListener("click", () => {
   location.reload();
 });
 
-
+//hides images again after mis-matched
 function hide() {
   compareSrcArr[0].style.visibility = "hidden";
   compareSrcArr[1].style.visibility = "hidden";
@@ -136,24 +136,21 @@ function lockBoard() {
 function matched() {
   matchedPair.push(...compareSrcArr);
 
-  if (matchedPair.length ===6){
+  if (matchedPair.length === 6) {
     lockBoard();
     popUp.children[0].textContent = "You got them all!";
     popUp.style.visibility = "visible";
     popUp.style.animation = "gameOver 1.5s";
-    playAgainBtn.style.display="block";
+    playAgainBtn.style.display = "block";
+  } else {
+    //setting timeout so img is displayed before the pop up.
+    setTimeout(() => {
+      popUp.style.visibility = "visible";
+      popUp.style.animation = "popUpAnimation 1.5s";
+    }, 100);
+    setTimeout(() => {
+      popUp.style.visibility = "hidden";
+      popUp.style.animation = "none";
+    }, 1500);
   }
-
-  else{
-  //setting timeout so img is displayed before the pop up.
-  setTimeout(() => {
-    popUp.style.visibility = "visible";
-    popUp.style.animation = "popUpAnimation 1.5s";
-  }, 100);
-  setTimeout(() => {
-    popUp.style.visibility = "hidden";
-    popUp.style.animation = "none";
-  }, 1600);
-
-}
 }
